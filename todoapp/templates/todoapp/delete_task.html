@@ -1,0 +1,13 @@
+{% extends 'todoapp/base.html' %}
+
+{% block title %}Удалить задачу{% endblock %}
+
+{% block content %}
+    <h2>Удалить задачу</h2>
+    <p>Вы уверены, что хотите удалить: <strong>{{ task.title }}</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">🗑 Удалить</button>
+        <a href="{% url 'task-list' %}" class="btn btn-secondary">↩ Отмена</a>
+    </form>
+{% endblock %}

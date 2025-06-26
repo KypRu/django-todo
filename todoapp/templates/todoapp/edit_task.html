@@ -1,0 +1,13 @@
+{% extends 'todoapp/base.html' %}
+
+{% block title %}Редактировать задачу{% endblock %}
+
+{% block content %}
+    <h2>Редактировать задачу</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">💾 Сохранить</button>
+        <a href="{% url 'task-list' %}" class="btn btn-secondary">↩ Назад</a>
+    </form>
+{% endblock %}
